@@ -288,7 +288,7 @@ class VisionNode(Node):
 
                 if len(approx) == 4:
                     x, y, w, h = cv2.boundingRect(approx)
-                    if 0.8 <= (float(w)/h) <= 2.0:
+                    if 0.9 <= (float(w)/h) <= 1.8:
                         target_msg.x = float(img_center_x - (x + w // 2))
                         target_msg.y = float(cv2.contourArea(cnt))
                         target_msg.z = 1.0 # Target Found
